@@ -13,7 +13,12 @@ function SignIn() {
 
   const navigate = useNavigate()
 
-  const onChange = () => {}
+  const onChange = (e) => {
+    setFormData((prevState) => ({
+      ...prevState,
+      [e.target.id]: e.target.value,
+    }))
+  }
 
   return (
     <>
@@ -39,7 +44,7 @@ function SignIn() {
                 placeholder='Password'
                 id='password'
                 value={password}
-                onChange={onchange}
+                onChange={onChange}
               />
 
               <img 
@@ -65,6 +70,10 @@ function SignIn() {
               </button>
             </div>
           </form>
+
+          <Link to='/sign-up' className='registerLink'>
+            Sign Up Instead
+          </Link>
       </div>    
     </>
   )
