@@ -1,21 +1,19 @@
 import {useState} from 'react'
 import {Link} from 'react-router-dom'
-import {getAuth, sendPasswwordResetEmail} from'firebase/auth'
+import {getAuth, sendPasswordResetEmail} from'firebase/auth'
 import {toast} from 'react-toastify'
 import { ReactComponent as ArrowRightIcon} from '../assets/svg/keyboardArrowRightIcon.svg'
 
 function ForgotPassword() {
   const [email, setEmail] = useState('')
 
-  const onChange = (e) => {
-
-  }
+  const onChange = (e) => setEmail(e.target.value)
   
   const onSubmit = async (e) => {
     e.preventDefault()
     try {
       const auth = getAuth()
-      await sendPasswwordResetEmail(auth, email)
+      await sendPasswordResetEmail(auth, email)
       toast.success('Email sent successfully')
     } catch (error) {
       toast.error('Could not send reset email')      
