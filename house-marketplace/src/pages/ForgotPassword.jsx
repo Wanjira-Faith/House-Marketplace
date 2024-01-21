@@ -18,7 +18,6 @@ function ForgotPassword() {
     } catch (error) {
       toast.error('Could not send reset email')      
     }
-
   }
 
   return (
