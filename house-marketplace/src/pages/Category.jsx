@@ -24,6 +24,15 @@ function Category() {
            orderBy('timestamp', 'desc'), 
            limit(10)
         )
+
+        // Execute query
+        const querySnap = await getDocs(q)
+
+        let listings = []
+
+        querySnap.forEach((doc) => {
+          console.log(doc.data());
+        })
       } catch (error) {
         
       }
