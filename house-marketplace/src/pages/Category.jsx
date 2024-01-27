@@ -1,6 +1,6 @@
 import {useEffect, useState} from 'react'
 import { useParams } from 'react-router-dom'
-import {collection, getDocs, query, where, orderBy, linit, startAfter} from 'firebase/firestore'
+import {collection, getDocs, query, where, orderBy, linit, startAfter, limit} from 'firebase/firestore'
 import {db} from '../firebase.config'
 import {toast} from 'react-toastify'
 import Spinner from '../components/Spinner'
@@ -16,6 +16,14 @@ function Category() {
       try {
         //  Get reference
         const listingsRef = collection(db, 'listings')
+
+        // Create query
+        const q = query(
+          listingsRef, 
+           where('type', '==', params.categoryName),
+           orderBy('timestamp', 'desc'), 
+           limit(10)
+        )
       } catch (error) {
         
       }
