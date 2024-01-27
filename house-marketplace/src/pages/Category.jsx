@@ -49,7 +49,14 @@ function Category() {
   }, [])
 
   return (
-    <div>Categories</div>
+    <div className='category'>
+      <header>
+        <p className='pageHeader'>
+          {params.categoryName === 'rent' ? 'Places for rent' : 'Places for sale'}
+        </p>
+      </header>
+
+    </div>
   )
 }
 
