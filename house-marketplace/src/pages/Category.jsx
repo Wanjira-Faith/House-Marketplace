@@ -11,6 +11,19 @@ function Category() {
 
   const params = useParams()
 
+  useEffect(() => {
+    const fetchListings = async () => {
+      try {
+        //  Get reference
+        const listingsRef = collection(db, 'listings')
+      } catch (error) {
+        
+      }
+    }
+
+    fetchListings()
+  })
+
   return (
     <div>Categories</div>
   )
