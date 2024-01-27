@@ -1,10 +1,12 @@
-import React from 'react'
+import {Link} from 'react-router-dom'
+import rentCategoryImage from '../assets/jpg/rentCategoryImage.jpg'
+import sellCtegoryImage from '../assets/jpg/sellCtegoryImage.jpg'
 
 function Explore() {
   return (
-    <h1>
+    <div>
       Explore
-    </h1>
+    </div>
   )
 }
 
