@@ -6,6 +6,11 @@ import {toast} from 'react-toastify'
 import Spinner from '../components/Spinner'
 
 function Category() {
+  const [listings, setListings] = useState(null)
+  const [loading, setLoading] =useState(true)
+
+  const params = useParams()
+
   return (
     <div>Categories</div>
   )
