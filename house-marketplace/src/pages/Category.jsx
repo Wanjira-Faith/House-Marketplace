@@ -28,18 +28,25 @@ function Category() {
         // Execute query
         const querySnap = await getDocs(q)
 
-        let listings = []
+        const listings = []
 
         querySnap.forEach((doc) => {
-          console.log(doc.data());
+          return listings.push({
+            id: doc.id,
+            data: doc.data(),
+          })
         })
+
+        setListings(listings)
+        setLoading(false)
+
       } catch (error) {
-        
+        toast.error('Could not fetch listings')
       }
     }
 
     fetchListings()
-  })
+  }, [])
 
   return (
     <div>Categories</div>
